@@ -12,7 +12,7 @@ merge(L, R)
 // repeatedly merge subarrays and sort on each merge 
 
 
-
+ 
 // psudocode: mergesort
 // mergesort(list)
 // base case: if list.length < 2, return 
@@ -20,3 +20,14 @@ merge(L, R)
 // Lsorted = mergeSort(L)
 // Rsorted = mergeSort(R)
 // return merge(Lsorted, Rsorted)
+
+     
+// [7, 6, 1, 12]
+// break the list into havles 
+// [7, 6]
+//[7] <= return sorted list of length 1 Lsorted
+// [1, 12]
+// [1]
+// [12]
+
+[1,6,7,12]
