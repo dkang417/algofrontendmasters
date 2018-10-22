@@ -21,13 +21,41 @@ merge(L, R)
 // Rsorted = mergeSort(R)
 // return merge(Lsorted, Rsorted)
 
-     
-// [7, 6, 1, 12]
-// break the list into havles 
-// [7, 6]
-//[7] <= return sorted list of length 1 Lsorted
-// [1, 12]
-// [1]
-// [12]
+// solution
 
-[1,6,7,12]
+//split the array into halves 
+function mergeSort(arr) {
+    if (arr.length === 1) {
+        //return once we hit an array with single line
+        return arr
+    }
+
+    const middle = Math.floor(arr.length / 2) //get middle item of array round down
+    const left = arr.slice(0, middle) // items on left side
+    const right = arr.slice(middle) 
+
+    return merge(
+        mergeSort(left),
+        mergeSort(right)
+    )
+
+}
+
+function merge(left, right) {
+    let result = []
+    let indexLeft = 0
+    let indexRight = 0
+
+    while (indexLeft < left.length && indexRight < right.length) {
+        if (left[indexLeft] < right[indexRight]) {
+            result.push(left[indexLeft])
+            indexLeft++
+        } else {
+            result.push(right[indexRight])
+            indexRight++
+        }
+    }
+    return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+}
+const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3]
+
