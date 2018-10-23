@@ -40,7 +40,7 @@ function mergeSort(arr) {
     )
 
 }
-
+// compare the arrays item by item and return the concatenated result 
 function merge(left, right) {
     let result = []
     let indexLeft = 0
@@ -59,3 +59,5 @@ function merge(left, right) {
 }
 const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3]
 
+console.log(mergeSort(list))
+// [1,2,2,3,3,3,5,6,7,8]
