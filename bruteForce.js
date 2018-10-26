@@ -36,5 +36,9 @@ const makeChange = (c) => {
                 minCoins = currMinCoins
             }
         }
-    });
+    })
+
+    // save the value into the cache
+    cache[c] = minCoins + 1;
+    return cache[c];
 }

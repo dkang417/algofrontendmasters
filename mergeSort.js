@@ -11,7 +11,6 @@ merge(L, R)
 // step 2 
 // repeatedly merge subarrays and sort on each merge 
 
-
  
 // psudocode: mergesort
 // mergesort(list)
