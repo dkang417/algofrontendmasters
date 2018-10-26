@@ -12,14 +12,15 @@ const uniqSort = function (arr) {
 
     for (let i = 1; i < arr.length; i++) {
         // start the for loop at 1 as element 0 can never be a duplicate 
+        
         if (!breadcrumbs[arr[i]]) {
             result.push(arr[i]);
+            // saves into breadcrumbs cache
             breadcrubs[arr[i]] = true;
         }
     }
     return result.sort((a, b) => a - b);
 };
-
 
 uniqSort([4, 2, 2, 3, 2, 2]); // [2,3,4]
 
