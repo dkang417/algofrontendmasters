@@ -1,4 +1,6 @@
-// write a function, times10 that takes an argument, n , 
+// memoizing is a type of caching. caching is saving something into an object or array
+
+// write a function, times10 that takes an argument, n ,
 // and multiplies n times 10
 const times10 = (n) => (n * 10);
 
