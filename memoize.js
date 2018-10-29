@@ -17,10 +17,8 @@ const cache = {}; // {9:90 }
 
 const memoTimes10 = (n) => {
     if (n in cache) {
-        console.log('fetching from cache: ', n);
         return cache[n];
     } else {
-        console.log('Calculating result');
         let result = times10(n); // result is 90
         cache[n] = result; 
         return result;
