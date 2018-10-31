@@ -28,5 +28,16 @@ myQ.enqueue('zero');
 myQ.enqueue('one');
 myQ.enqueue('two');
 myQ.dequeue();
+myQ.dequeue();
+myQ.enqueue('whattt');
+myQ.enqueue('nooo');
+myQ.enqueue('whyyyy');
+myQ.dequeue();
+myQ.enqueue('how');
 console.log(myQ);
+// queue {
+//     _storage: { '3': 'whattt', '4': 'nooo', '5': 'whyyyy', '6': 'how' },
+//     _length: 4,
+//         _headIndex: 3
+// }
 
