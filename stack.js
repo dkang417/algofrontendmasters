@@ -41,3 +41,6 @@ myStack.push('two');
 myStack.pop();
 myStack.peek();
 console.log(myStack);
+
+
+

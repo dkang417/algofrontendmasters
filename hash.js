@@ -2,11 +2,31 @@ class HashTable {
 
     constructor(val) {
         this._storage = [];
-        this.tableSize = val;
+        this._tableSize = val;
+        this._inputSize = 0;
     }
 
     insert(key,value) {
-        const index = this._hash
+        const index = this._hash(key, this.tableSize);
+        if (this._storage[index]) {
+            this._storage[index] = [];
+        }
+        //todo loop through array and find if key was already inserted
+        this._storage[index].push([key, value]);
+        // [0,0,0,[['a',1],['b',2]]] handling collision-when hashed function returns same index for a diff key
+
+    }
+
+    retrieve(key) {
+        const index = this._hash(key, this._tableSize);
+        const arrayAtIndex = this._storage[index];
+
+        if (arrayAtindex) {
+            for (let i = 0; i < arrayAtIndex.length; i++){
+                const keyValueArray = arrayAtIndex[i];
+                if (keyValueArray[0] === key) return keyValueArray[1];
+            }
+        }
     }
 
     remove() {
