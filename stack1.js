@@ -1,17 +1,28 @@
-var Stack = function () {
-    this.storage = '';
-};
-Stack.prototype.push = function (val) {
-    this.storage = this.storage.concat('***', val);
-};
-Stack.prototype.pop = function () {
-    // slice off the last characters up until ***
-    var str = this.storage.slice(this.storage.lastIndexOf('***') + 3);
-    // updating new stack without last item
-    this.storage = this.storage.substring(0, this.storage.lastIndexOf('***'))
-    return str;
+function Stack(capacity) {
+    this._capacity = capacity || Infinity;
+    this._storage = {};
+    this._count = 0;
 }
-var newStack = new Stack();
-newStack.push('hi');
-newStack.push('bye');
-console.log(newStack);
+
+Stack.prototype.push = function (value) {
+    if (this._count < this._capacity) {
+        this._storage[this._count++] = value;
+        return this._count;
+    }
+    return 'max capacity already reached.remove element before adding a new one.'; //stack overflow
+};
+
+Stack.prototype.pop = function () {
+    var value = this._storage[--this._count]; // decrement first then return
+    delete this._storage[this._count];
+    if (this._count < 0) {
+        this._count = 0;
+    }
+    return value;
+};
+
+Stack.prototype.peek = function () {
+    return this._storage[this.count - 1];
+}
+
+
