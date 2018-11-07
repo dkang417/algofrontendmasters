@@ -1,3 +1,5 @@
+// create a stack 
+
 function Stack(capacity) {
     this._capacity = capacity || Infinity;
     this._storage = {};
@@ -40,26 +42,24 @@ function Stack(capacity) {
   
   // var myStack = new Stack(3);
   // console.log(myStack.push('a'), 'should be 1');
-  // console.log(myStack.push('b'), 'should be 2');
-  // console.log(myStack.push('c'), 'should be 3');
-  // console.log(myStack.push('d'), 'should be Max capacity reached');
-  // console.log(myStack.pop(), 'should be c');
-  // console.log(myStack.count(), 'should be 2');
-  // console.log(myStack.peek(), 'should be b');
-  // console.log(myStack.count(), 'should be 2');
+
+
+
   
-  //____________________________________________
-  // Implement a min stack
+
+  // create a min stack - 
   function MinStack(capacity) {
     this._capacity = capacity;
     this._storage = {};
     this._count = 0;
+    // our minstack not storage 
     this._min = new Stack();
   }
   
   // O(1)
   MinStack.prototype.push = function(value) {
     if (this._count < this._capacity) {
+      // keeps track of min value
       if (this._min.peek() < value) {
         this._min.push(this._min.peek());
       } else {
