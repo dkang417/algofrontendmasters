@@ -29,7 +29,7 @@ Stack.prototype.count = function () {
     return this._count;
 }
 
-
+// create a queue with 2 stacks
 
 function Queue_TwoStacks() {
     this._stackIn = new Stack();

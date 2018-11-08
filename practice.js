@@ -5,19 +5,7 @@ function Stack(capacity) {
     this._count = 0;
 }
 
-Stack.prototype.push = function (value) {
-    if (this._count < this._capacity) {
-        this._storage[this._count++] = value;
-        return this._count;
-    }
-    return 'max capacity reached';
-};
 
-function Stack(capacity) {
-    this._capacity = capacity;
-    this._storage = {};
-    this._count = 0;
-}
 Stack.prototype.add = function(value) {
     if (this._count < this._capacity) {
         this._storage[this.count++] = value;
@@ -42,4 +30,25 @@ Stack.prototype.peek = function () {
 }
 Stack.prototype.count = function () {
     return this._count;
+}
+
+// create a queue using 2 stacks
+function QueueStack() {
+    this._inStack = new Stack();
+    this._outStack = new Stack();
+}
+QueueStack.prototype.add = function (value) {
+    this._inStack.push(value);
+}
+QueueStack.prototype._transferStack = function () {
+    while (this._inStack.count() > 0) {
+        this._outStack.push(this._inStack.pop());
+    }
+}
+QueueStack.prototype.remove = function () {
+    if (this._outStack.count() === 0) this._transferStack();
+    return this._outStack.pop();
+}
+QueueStack.prototype.count = function () {
+    return this._inStack.count() + this._outStack.count();
 }
