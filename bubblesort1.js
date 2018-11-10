@@ -1,4 +1,5 @@
 //bubble sort 
+// create a WALL. then decrement the wall and work backwards
 var bubbleSort = function (array) {
     // while wall > 0
     var wall = array.length; // first sorted element
