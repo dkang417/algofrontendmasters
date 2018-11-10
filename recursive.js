@@ -47,6 +47,6 @@ function recursiveMultiply(arr, num) {
     console.log(arr);
 }
 
-recursiveMultiply([], 3);
+recursiveMultiply([1,2,3], 3);
 
 

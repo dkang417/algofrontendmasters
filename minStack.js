@@ -12,7 +12,7 @@ function Stack(capacity) {
       this._storage[this._count++] = value;
       return this._count;
     }
-    return 'Max capacity already reached. Remove element before adding a new one.';
+    return 'Max capacity already reached. stackoverflow!';
   };
   
   // O(1)
@@ -47,6 +47,8 @@ function Stack(capacity) {
 
   
 
+
+
   // create a min stack - 
   function MinStack(capacity) {
     this._capacity = capacity;
@@ -68,7 +70,7 @@ function Stack(capacity) {
       this._storage[this._count++] = value;
       return this._count;
     }
-    return 'Max capacity already reached. Remove element before adding a new one.';
+    return 'Max capacity reached!';
   };
   
   // O(1)
