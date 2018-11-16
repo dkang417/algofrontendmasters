@@ -12,7 +12,7 @@
             // save 4 in variable
             //swap arr[arr.ln-1] with arr[i] 
             // move 5 to i; move 4 to arr.ln-1-i
-//[3,7,6,1,2,5,4]
+
 
 function quicksort(array, lo, hi) {
     if (lo === undefined) lo = 0;
@@ -20,20 +20,30 @@ function quicksort(array, lo, hi) {
 
     if (lo < hi) {
         var p = partition(array, lo, hi);
+        // [5,3,1,4,2], 0 4
         quicksort(array, lo, p - 1);
         quicksort(array, p + 1, hi);
     }
     if(hi-lo === array.length - 1) return 
 }
 
-function partition(arr, lo, hi) {
-    var pivot = arr[hi];
-    var pivotLoc = lo;
-    for (var i = lo; i < hi; i++) {
-        if (arr[i] <= pivot) {
+function partition(arr, lo, hi) { // [5,3,1,4,2], 0 4
+    var pivot = arr[hi]; //2
+    var pivotLoc = lo; // 0
+    for (var i = lo; i < hi; i++) { // 0 -> 4
+        if (arr[i] <= pivot) { // 5 <= 2 false
             swap(arr, pivotLoc, i);
             pivotLoc++;
         }
     }
+    swap(arr, pivotLoc, hi);
+    return pivotLoc;
 }
 
+function swap(arr, i1, i2) {
+    if (i1 === i2) return;
+    var temp = arr[i1];
+    arr[i1] = arr[i2];
+    arr[i2] = temp;
+    return arr;
+}

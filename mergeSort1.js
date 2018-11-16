@@ -51,6 +51,3 @@ function merge(left, right) {
     return result;
 }
   
-function mergeSortIterative(array) {
-    
-}
