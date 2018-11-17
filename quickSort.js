@@ -30,16 +30,17 @@ function quicksort(array, lo, hi) {
 function partition(arr, lo, hi) { // [5,3,1,4,2], 0 4
     var pivot = arr[hi]; //2
     var pivotLoc = lo; // 0
-    for (var i = lo; i < hi; i++) { // 0 -> 4
-        if (arr[i] <= pivot) { // 5 <= 2 false
+    for (var i = lo; i < hi; i++) { // 3-> 4
+        if (arr[i] <= pivot) { // 4 <= 2 false
             swap(arr, pivotLoc, i);
-            pivotLoc++;
+            // [1,3,5,4,2]
+            pivotLoc++; // 1
         }
     }
     swap(arr, pivotLoc, hi);
     return pivotLoc;
 }
-
+// generic swap function 
 function swap(arr, i1, i2) {
     if (i1 === i2) return;
     var temp = arr[i1];
