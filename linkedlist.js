@@ -1,16 +1,19 @@
-class LinkedList {
+// tree where each node only has one child
 
+class LinkedList {
+// constructor has storage and head
     constructor(value) {
         this.head = { value, next: null };
         this.tail = this.head;
     }
-
+    // add to tail
     insert(value) {
         // update tail reference
         const node = { value, next: null };
         this.tail.next = node;
         this.tail = node;
     }
+    // remove node 
     remove() {
         // loop and find the node before the tail! 
         // node.next === this.tail
@@ -45,9 +48,6 @@ class LinkedList {
 var myList = new LinkedList(1);
 myList.insert(2);
 myList.insert(3);
-myList.remove();
-
-
 console.log(myList);
 
 // {
